@@ -1,8 +1,9 @@
 
 package Server.FileReader;
 
-import org.junit.Assert;
 
+
+import junit.framework.Assert;
 import junit.framework.TestCase;
 
 /** testing basic rest output**/

@@ -19,10 +19,9 @@ public class AppMain {
 
 	static ExecutorService executor = Executors.newSingleThreadExecutor();
 	static Server server ;
-	static int portNo ;
+	static int portNo = 2222 ;
 
 	public static void main(String[] args) throws Exception {
-
 		String filePath = args[0];
 		if(args.length==2){
 			try{
@@ -32,7 +31,7 @@ public class AppMain {
 				System.out.println("Input port no is invalid , initializing with default port 2222");
 			}
 		}
-		System.out.println("Starting FileReader for " + filePath);
+		System.out.println("Starting FileReader for " + filePath+" at port:"+portNo);
 		FileOffsetIndexer indexer = new FileOffsetIndexer(filePath);
 		indexer.indexLineNumber();
 		initializeJetty();
@@ -47,7 +46,7 @@ public class AppMain {
 		config.packages("Server.FileReader");
 		ServletHolder servlet = new ServletHolder(new ServletContainer(config));
 
-		server = new Server(2222);
+		server = new Server(portNo);
 		ServletContextHandler context = new ServletContextHandler(server, "/*");
 		context.addServlet(servlet, "/*");
 

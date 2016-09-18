@@ -1,1 +1,1 @@
-mvn clean compile exec:java -Dexec.args=$1
+mvn clean compile exec:java -Dexec.args="$1 $2"
