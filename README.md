@@ -3,9 +3,9 @@
 Please install and configure Maven 3.x 
 ## To run
 use the following command in the home directory of the project
-mvn exec:java -Dexec.args=<path of input file>
+sh run.sh <path of input file> <portNo>
 ### example
-mvn exec:java -Dexec.args="/usr/Name/Docs/InputFile"
+sh run.sh InputFile 2222
 
 ## Functional Requirements
 
