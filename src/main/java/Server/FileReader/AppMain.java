@@ -19,10 +19,19 @@ public class AppMain {
 
 	static ExecutorService executor = Executors.newSingleThreadExecutor();
 	static Server server ;
+	static int portNo ;
 
 	public static void main(String[] args) throws Exception {
 
 		String filePath = args[0];
+		if(args.length==2){
+			try{
+			portNo=Integer.parseInt(args[1]);
+			}catch(Exception e){
+				portNo = 2222;
+				System.out.println("Input port no is invalid , initializing with default port 2222");
+			}
+		}
 		System.out.println("Starting FileReader for " + filePath);
 		FileOffsetIndexer indexer = new FileOffsetIndexer(filePath);
 		indexer.indexLineNumber();
