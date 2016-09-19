@@ -1,14 +1,21 @@
 # FileLinesReader
+
 ## Prerequisite 
 Please install and configure Maven 3.x 
+
 ## To run
 use the following command in the home directory of the project
-sh run.sh <path of input file> <portNo>
+```
+./run.sh <inputfile_path> [port_no]
+```
+
 ### example
-sh run.sh InputFile 2222
+```
+./run.sh InputFile 2222
+./run.sh InputFile
+```
 
 ## Functional Requirements
-
 This is a server that serves individual lines of an immutable text file over the network to clients using the following simple REST API:
 
 - GET /lines/<line index>
